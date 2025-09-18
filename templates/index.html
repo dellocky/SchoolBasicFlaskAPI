@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ css_path }}"> <!--Jinja formating allows html to connect css through flaskAPI-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"> <!--Connecting the icon-->
+    <title>Sanderson's Ice Cream Sundaes</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sanderson’s Ice Cream Sundaes</h1>
+
+        <!-- Sizes -->
+        <div class="section">
+            <h3>Choose a Size</h3>
+            <div class="row">
+                <div class="column">
+                    <label>$2.20</label>
+                    <button class="size_button" data-price="2.20" data-active="false">One Scope</button> <!-- Data-active used to store button state-->
+                </div>
+                <div class="column">
+                    <label>$3.00</label>
+                    <button class="size_button" data-price="3.00" data-active="false">Two Scopes</button>
+                </div>
+                <div class="column">
+                    <label>$4.00</label>
+                    <button class="size_button" data-price="4.00" data-active="false">Three Scopes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flavors -->
+        <div class="section">
+            <h3>Choose a Flavor</h3>
+            <div class="row">
+                <div class="column">
+                    <button class="flavor_button" data-active="false">Vanilla</button>
+                </div>
+                <div class="column">
+                    <button class="flavor_button" data-active="false">Chocolate</button>
+                </div>
+                <div class="column">
+                    <button class="flavor_button" data-active="false">Strawberry</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extras and Checkout -->
+        <div class="section">
+            <div class="row">
+                <!-- Extras -->
+                <div class="column">
+                    <h3>Add Extras +$.50 ea</h3>
+                    <div class="extras">
+                        <button class="extra_button" data-active="false">Nuts</button>
+                        <button class="extra_button" data-active="false">Whipped Cream</button>
+                        <button class="extra_button" data-active="false">Cherries</button>
+                    </div>
+                </div>
+
+                <!-- Checkout -->
+                <div class="column checkout">
+                    <h3>Checkout</h3>
+                    <button id ="checkout_button">Order Now</button>
+                    <label id ="checkout_label">$0.00</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
